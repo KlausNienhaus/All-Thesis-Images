@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=newest}
+\usepackage{caption}
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{figure}[h]
+%0 - 0 MiB   1 - 250 Mib   2 - 500 MiB   4 - 1000 MiB
+\pgfplotstableread{
+  %Cold ,Cold IPoIB ,Offline HDD, Offline HDD IPoIB, Offline RAM, Offline HDD IPoIB
+0 0.19		0.18	0.22	0.18 	0.21	0.16
+1 2.43		2.34	3.95	3.49	2.74	2.15
+2 4.67		4.58	8.12	7.12	5.27	4.17
+3 9.16		8.8		16.3	13.48	10.32	8.08
+}\dataset
+\begin{tikzpicture}
+\begin{axis}[ybar,
+        width=14cm,
+        height=12cm,
+        %enlargelimits=0.15,
+        ymin=0,
+        ymax=18, 
+        xmin = -0.5,
+        xmax = 3.5,       
+        ylabel={Migration Time in Seconds},
+        xtick=data,
+        xticklabels = {
+            \strut 0 MiB Load,
+            \strut 250 MiB Load,
+            \strut 500 MiB Load,
+            \strut 1000 MiB Load
+            %Category 5,
+            %Category 6
+        },
+        %xticklabel style={yshift=-10ex},
+        major x tick style = {opacity=1},
+        minor x tick num = 1,
+        minor tick length=2ex,
+        every node near coord/.append style={
+                anchor=west,
+                rotate=90
+        },
+        legend entries={Cold ,Cold IPoIB ,Offline HDD, Off. HDD IPoIB, Offline RAM, Off. HDD IPoIB },
+        legend columns=2,
+        legend pos=north west,
+        %legend style={at={(0.5, 1.05)}, anchor=south,legend columns=-1},
+        legend style={draw=none,nodes={inner sep=3pt}},
+        ]
+\addplot[draw=black,fill=green!40, nodes near coords] table[x index=0,y index=1] \dataset; %Cold
+\addplot[draw=black,fill=green!20, nodes near coords] table[x index=0,y index=2] \dataset; %Cold IPoIB
+\addplot[draw=black,fill=blue!40, nodes near coords] table[x index=0,y index=3] \dataset; %Offline HDD
+\addplot[draw=black,fill=blue!20, nodes near coords] table[x index=0,y index=4] \dataset; %Offline HDD IPoIB
+\addplot[draw=black,fill=cyan!40, nodes near coords] table[x index=0,y index=5] \dataset; %Offline RAM
+\addplot[draw=black,fill=cyan!20, nodes near coords] table[x index=0,y index=6] \dataset; %Offline HDD IPoIB
+\end{axis}
+\end{tikzpicture}
+%\captionsetup{justification=centerlast, margin=10ex, labelfont=bf, textfont=it, format=plain, labelformat=default, labelsep=endash, font=small, name=Figure\,}
+%\caption{Migration Time Measurement}\label{MGTM}
+
+\end{figure}
+
+\end{document}

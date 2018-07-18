@@ -1,0 +1,52 @@
+\documentclass[border=0pt]{standalone}
+\usepackage{pgfplots}
+%\pgfplotsset{width=7cm,compat=1.8}
+\usepackage{pgfplotstable}
+\renewcommand*{\familydefault}{\sfdefault}
+\usepackage{sfmath}
+%\pgfplotsset{width=7cm,compat=1.8}
+%\usetikzlibrary{positioning, arrows, shapes, shadows, calc, fit}
+%\usepackage{pgfplots}
+%\usepackage{subcaption}
+
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+xbar stacked,
+bar width=15pt,
+%every node near coord/.append style={font=\tiny, inner sep=1pt},
+%nodes near coords,
+enlargelimits=0.15,
+legend style={at={(0.5, 1.05)},
+	anchor=south,legend columns=-1},
+xlabel={internal migration time scaling},
+symbolic y coords={Cold, Cold IPoIB, Offline HDD, Off. HDD IPoIB, 
+	Offline RAM, Off. RAM IPoIB},
+ytick=data,
+ticklabel style = {font=\small},
+%ytick=data, nodes near coords, nodes near coords align={horizontal}, 
+%every node near coord/.append style={
+%	/pgf/number format/fixed zerofill,
+%	/pgf/number format/precision=3
+%},
+y tick label style={rotate=0,anchor=east},
+]
+\addplot+[xbar] plot coordinates {(0.000245,Cold) (0.000225,Cold IPoIB) 
+	(0.000149,Offline HDD) (0.000152,Off. HDD IPoIB) (0.000077,Offline RAM) (0.000075,Off. RAM IPoIB)};
+\addplot+[xbar] plot coordinates {(0.000057,Cold) (0.000072,Cold IPoIB) 
+	(0.000065,Offline HDD) (0.000065,Off. HDD IPoIB) (0.000049,Offline RAM) (0.000049,Off. RAM IPoIB)};
+\addplot+[xbar] plot coordinates {(0.000004,Cold) (0.000004,Cold IPoIB)
+	(0.000018,Offline HDD) (0.000018,Off. HDD IPoIB) (0.000011,Offline RAM) (0.000011,Off. RAM IPoIB)};
+\addplot+[xbar] plot coordinates {(0.0135,Cold) (0.0246,Cold IPoIB) 
+	(0.0117,Offline HDD) (0.0119,Off. HDD IPoIB) (0.0096,Offline RAM) (0.00965,Off. RAM IPoIB)};
+\addplot+[xbar, yellow!70, draw= black!70] plot coordinates {(9.110,Cold) (8.770,Cold IPoIB) 
+	(0.991,Offline HDD) (0.993,Off. HDD IPoIB) (0.570,Offline RAM) (0.574,Off. RAM IPoIB)};
+\addplot+[xbar, cyan!70, draw= black!70] plot coordinates {(0,Cold) (0,Cold IPoIB) 
+	(9.590,Offline HDD) (7.660,Off. HDD IPoIB) (9.200,Offline RAM) (6.960,Off. RAM IPoIB)};
+\addplot+[xbar, green!40, draw= black!70] plot coordinates {(0.0197,Cold) (0.0014,Cold IPoIB) 
+	(5.700,Offline HDD) (4.800,Off. HDD IPoIB) (0.528,Offline RAM) (0.518,Off. RAM IPoIB)};
+\legend{\strut Config, \strut VCPU, \strut Clock, \strut Mem Ident., \strut Mem, \strut File, \strut Restore }
+\end{axis}
+\end{tikzpicture}
+\end{document}

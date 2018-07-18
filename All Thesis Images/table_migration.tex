@@ -1,0 +1,49 @@
+\documentclass[border=0pt]{standalone}
+\usepackage{pgfplots}
+%\usepackage{table}
+\usepackage{multirow}
+%\pgfplotsset{width=7cm,compat=1.8}
+\usepackage{pgfplotstable}
+\renewcommand*{\familydefault}{\sfdefault}
+\usepackage{sfmath}
+%\pgfplotsset{width=7cm,compat=1.8}
+%\usetikzlibrary{positioning, arrows, shapes, shadows, calc, fit}
+%\usepackage{pgfplots}
+%\usepackage{subcaption}
+
+
+\begin{document}
+	
+%\begin{table}[h]
+	%\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{Measurements} & \multicolumn{2}{c|}{Cold} & \multicolumn{2}{c|}{Cold IB} & \multicolumn{2}{c|}{Offline HD} & \multicolumn{2}{c|}{Offline HD IB} & \multicolumn{2}{c|}{Offline RAM} & \multicolumn{2}{c|}{Off. RAM IB} \\
+		%\cline{2-5}
+		%& \multicolumn{2}{c|}{Value} & \multicolumn{2}{c|}{Value} & \\
+		\cline{2-13}
+		& Avg & StD & Avg & StD & Avg & StD & Avg & StD & Avg & StD & Avg & StD\\
+		\hline
+		Config & 245$\mu$s & 98.5 & 225$\mu$s & 101 & 149$\mu$s & 12.5 & 152$\mu$s & 11.9 & 77$\mu$s & 7.06 & 75$\mu$s & 9.23  \\
+		\hline
+		VCPU & 57$\mu$s & 8.58 & 72$\mu$s & 7.92 & 65$\mu$s  & 8.13 & 65$\mu$s  & 5.67 & 49$\mu$s & 6.00 & 49$\mu$s & 5.92   \\
+		\hline
+		Clock & 4$\mu$s & 3.50 & 4$\mu$s & 2.99 & 18$\mu$s  & 2.79 & 18$\mu$s  & 3.24 & 11$\mu$s & 1.41 & 11$\mu$s & 1.60  \\
+		\hline
+		PT walk & 13.5ms & 1.28 & 24.6ms & 11.8 & 11.7ms & 0.39 & 11.9ms & 0.39 & 9.60ms & 0.28 & 9.65ms & 0.47  \\
+		\hline
+		Memory St./Tr. & 9.11s & 0.005 & 8.77s & 1.56 & 991ms & 25.5 & 993ms & 0.91 & 570ms & 10.5 & 574ms & 8.72 \\
+		\hline
+		File Transfer & - & - & - & - & 9.59s & 0.63 & 7.66s & 0.76 & 9.20s & 0.01 & 6.96s & 0.79  \\
+		\hline
+		Restore & 19.7ms & 2.30 & 1.4ms & 0.82 & 5.70s & 0.99 & 4.80s & 1.31 & 528ms & 2.40 & 518ms & 13.0  \\
+		\hline
+		Total & 9.14s & 0.004 & 8.77s & 1.56 & 16.3s & 0.47 & 13.4s & 1.26 & 10.3s & 0.012 & 8.06s & 0.79  \\
+		\hline
+		
+	\end{tabular}
+%\end{table}	
+
+
+
+\end{document}

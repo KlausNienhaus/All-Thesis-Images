@@ -1,0 +1,50 @@
+\documentclass[border=0pt]{standalone}
+\usepackage{pgfplots}
+%\usepackage{table}
+\usepackage{multirow}
+%\pgfplotsset{width=7cm,compat=1.8}
+\usepackage{pgfplotstable}
+\renewcommand*{\familydefault}{\sfdefault}
+\usepackage{sfmath}
+\usepackage{nicefrac}
+%\pgfplotsset{width=7cm,compat=1.8}
+%\usetikzlibrary{positioning, arrows, shapes, shadows, calc, fit}
+%\usepackage{pgfplots}
+%\usepackage{subcaption}
+
+
+\begin{document}
+	
+%\begin{table}[h]
+	%\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{Measurements} & Cold & Cold IB & Offline HD & Offline HD IB & Offline RAM & Off. RAM IB \\
+		%\cline{2-5}
+		%& \multicolumn{2}{c|}{Value} & \multicolumn{2}{c|}{Value} & \\
+		\cline{2-7}
+		& Avg$\frac{+}{-}$Con95 & Avg$\frac{+}{-}$Con95 & Avg$\frac{+}{-}$Con95 & Avg$\frac{+}{-}$Con95 & Avg$\frac{+}{-}$Con95 & Avg$\frac{+}{-}$Con95 \\
+		\hline
+		Config & 245$\frac{+}{-}$19 $\mu$s  & 225$\frac{+}{-}$20 $\mu$s & 149$\frac{+}{-}$2.5 $\mu$s & 152$\frac{+}{-}$2.3 $\mu$s & 77$\frac{+}{-}$1.4 $\mu$s & 75$\frac{+}{-}$1.8 $\mu$s  \\
+		\hline
+		VCPU & 57$\frac{+}{-}$1.7 $\mu$s  & 72$\frac{+}{-}$1.6 $\mu$s & 65$\frac{+}{-}$1.6 $\mu$s  & 65$\frac{+}{-}$1.11 $\mu$s & 49$\frac{+}{-}$1.2 $\mu$s & 49$\frac{+}{-}$1.2 $\mu$s   \\
+		\hline
+		Clock & 4$\frac{+}{-}$0.6 $\mu$s & 4$\frac{+}{-}$0.6 $\mu$s & 18$\frac{+}{-}$0.6 $\mu$s  & 18$\frac{+}{-}$0.64 $\mu$s & 11$\frac{+}{-}$0.3 $\mu$s & 11$\frac{+}{-}$0.3 $\mu$s  \\
+		\hline
+		PT walk & 13.5$\frac{+}{-}$0.25 ms & 24.6$\frac{+}{-}$2.3 ms & 11.7$\frac{+}{-}$0.08 ms & 11.9$\frac{+}{-}$0.08 ms & 9.60$\frac{+}{-}$0.05 ms & 9.65$\frac{+}{-}$0.09 ms  \\
+		\hline
+		Memory St./Tr. & 9.11$\frac{+}{-}$0.0006 s & 8.77$\frac{+}{-}$0.3 s & 991$\frac{+}{-}$5 ms & 993$\frac{+}{-}$0.18 ms & 570$\frac{+}{-}$2.06 ms & 574$\frac{+}{-}$1.71 ms \\
+		\hline
+		File Transfer & - & -  & 9.59$\frac{+}{-}$0.12 s & 7.66$\frac{+}{-}$0.15 s & 9.20$\frac{+}{-}$0.002 s & 6.96$\frac{+}{-}$0.15 s  \\
+		\hline
+		Restore & 19.7$\frac{+}{-}$0.45 ms & 1.4$\frac{+}{-}$0.16 ms & 5.70$\frac{+}{-}$0.19 s & 4.80$\frac{+}{-}$0.26 s & 528$\frac{+}{-}$0.47 ms & 518$\frac{+}{-}$2.55 ms  \\
+		\hline
+		Total & 9.14$\frac{+}{-}$0.0008 s & 8.77$\frac{+}{-}$0.31 s & 16.3$\frac{+}{-}$0.09 s & 13.4$\frac{+}{-}$0.25 s & 10.3$\frac{+}{-}$0.002 s & 8.06$\frac{+}{-}$0.155 s  \\
+		\hline
+		
+	\end{tabular}
+%\end{table}	
+
+
+
+\end{document}
